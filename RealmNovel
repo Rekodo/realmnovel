@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>إضافة مصدر RealmNovel</title>
+</head>
+<body>
+    <h1>إضافة مستودع جديد</h1>
+    <form id="repoForm">
+        <label>Name: <input type="text" name="name" value="Realmnovel"></label><br>
+        <label>URL: <input type="text" name="url" value="https://www.realmnovel.com/"></label><br>
+        <label>Owner: <input type="text" name="owner" value="RealmNovel Team"></label><br>
+        <label>Source Type: 
+            <select name="source">
+                <option value="lightnovel">Light Novel</option>
+                <option value="webnovel">Web Novel</option>
+            </select>
+        </label><br>
+        <button type="submit">إنشاء ملف JSON</button>
+    </form>
+
+    <script>
+        document.getElementById('repoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const jsonData = {
+                id: formData.get('name').toLowerCase(),
+                name: formData.get('name'),
+                sourceSite: formData.get('url'),
+                sourceName: formData.get('owner'),
+                source: formData.get('source'),
+                version: "1.0.0"
+            };
+            
+            // عرض JSON للمستخدم لنسخه أو تحميله
+            alert(JSON.stringify(jsonData, null, 2));
+            console.log(jsonData); // يمكن استبدال هذا برفع الملف لخادم
+        });
+    </script>
+</body>
+</html>
