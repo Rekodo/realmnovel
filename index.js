@@ -308,7 +308,7 @@ var u = new(function () {
     sourceSite: "https://www.realmnovel.com/",
     sourceName: "RealmNovel",
     options: {
-        lang: "English",
+        lang: "ara",
         reverseChapters: !0,
         customJs: "$('article > style').text().match(/\\.\\w+(?=\\s*[,{])/g)?.forEach(tag => $(`p${tag}`).remove());$('.chapter-content .ads').remove();",
         versionIncrements: 0
